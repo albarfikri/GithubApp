@@ -1,6 +1,8 @@
 package com.example.github
 
 import android.content.res.TypedArray
+import android.graphics.Color
+import android.graphics.Color.RED
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.AdapterView
@@ -10,6 +12,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.github.databinding.ActivityMainBinding
+import com.scwang.wave.MultiWaveHeader
 
 class MainActivity : AppCompatActivity() {
     private lateinit var lvUser: ListView
@@ -25,18 +28,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var avatar: TypedArray
     private var users = arrayListOf<User>()
 
-    private var list: ArrayList<User> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
 
         adapter = UserAdapter(this)
         binding.lvList.adapter = adapter
 
         prepare()
         addItem()
+
         binding.lvList.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
 
             Toast.makeText(this@MainActivity, users[position].name, Toast.LENGTH_SHORT).show()
@@ -55,6 +62,7 @@ class MainActivity : AppCompatActivity() {
         avatar = resources.obtainTypedArray(R.array.avatar)
     }
 
+
     private fun addItem() {
         for (position in name.indices) {
             val user = User(
@@ -71,7 +79,4 @@ class MainActivity : AppCompatActivity() {
         }
         adapter.users = users
     }
-
-
-
 }

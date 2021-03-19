@@ -41,6 +41,8 @@ class UserAdapter internal constructor(private val context: Context) : BaseAdapt
 
         fun bind(user: User) {
             binding.imgItemPhoto.setImageResource(user.avatar)
+            binding.tvName.text = user.name
+            binding.tvUsername.text = user.username
         }
 
     }

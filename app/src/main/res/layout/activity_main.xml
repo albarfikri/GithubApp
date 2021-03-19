@@ -1,16 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#45E1F5FE"
     tools:context=".MainActivity">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_header"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        app:mwhProgress="1"
+        app:mwhVelocity="1"
+        app:mwhStartColor="@color/black"
+        app:mwhWaveHeight="120dp" />
+
+    <RelativeLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/frontText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="left"
+            android:padding="16dp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="1dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/frontText"
+            android:src="@drawable/github" />
+
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/lv_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/bar"
+        android:divider="@null"
+        android:dividerHeight="0dp" />
 
+    <!--    <com.scwang.wave.MultiWaveHeader-->
+    <!--        android:id="@+id/wave_footer"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:scaleY="-1"-->
+    <!--        android:layout_alignParentBottom="true"/>-->
 
 </RelativeLayout>
