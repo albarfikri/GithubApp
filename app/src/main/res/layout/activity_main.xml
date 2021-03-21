@@ -14,14 +14,28 @@
         android:layout_width="match_parent"
         android:layout_height="350dp"
         app:mwhProgress="1"
-        app:mwhVelocity="1"
         app:mwhStartColor="@color/black"
+        app:mwhVelocity="1"
         app:mwhWaveHeight="120dp" />
+
+    <com.scwang.wave.MultiWaveHeader
+        android:id="@+id/wave_footer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:mwhProgress="1"
+        app:mwhStartColor="@color/black"
+        app:mwhVelocity="1"
+        app:mwhWaveHeight="120dp"
+        android:scaleY="-1"
+        android:layout_alignParentBottom="true"/>
+
 
     <RelativeLayout
         android:id="@+id/bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
 
         <TextView
             android:id="@+id/frontText"
@@ -37,8 +51,8 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="1dp"
             android:layout_centerVertical="true"
+            android:layout_marginStart="1dp"
             android:layout_toEndOf="@+id/frontText"
             android:src="@drawable/github" />
 
@@ -51,12 +65,5 @@
         android:layout_below="@id/bar"
         android:divider="@null"
         android:dividerHeight="0dp" />
-
-    <!--    <com.scwang.wave.MultiWaveHeader-->
-    <!--        android:id="@+id/wave_footer"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="100dp"-->
-    <!--        android:scaleY="-1"-->
-    <!--        android:layout_alignParentBottom="true"/>-->
 
 </RelativeLayout>

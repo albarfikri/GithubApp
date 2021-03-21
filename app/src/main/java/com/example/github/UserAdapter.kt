@@ -36,13 +36,15 @@ class UserAdapter internal constructor(private val context: Context) : BaseAdapt
 
     }
 
-    private inner class ViewHolder constructor(private val view: View){
+    private inner class ViewHolder constructor(private val view: View) {
         private val binding = ItemRowUserBinding.bind(view)
 
         fun bind(user: User) {
             binding.imgItemPhoto.setImageResource(user.avatar)
             binding.tvName.text = user.name
             binding.tvUsername.text = user.username
+            binding.tvFollower.text = user.followers
+            binding.tvFollowing.text = user.following
         }
 
     }
