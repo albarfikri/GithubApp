@@ -8,6 +8,9 @@ import android.view.WindowManager
 
 @Suppress("DEPRECATION")
 class SplashActivity : AppCompatActivity() {
+    //correction from reviewer
+    private var delayTime: Long = 5000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -21,6 +24,6 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
-        }, 5000)
+        }, delayTime)
     }
 }
